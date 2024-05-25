@@ -1,6 +1,6 @@
 # MOFAFF
 
-A package to calculate MOF Adsorption with Framework Flexibility (MOFAFF)
+A package to calculate MOF adsorption with framework flexibility (MOFAFF). This package iteratively runs machine learning potential (MLP) based MD (LAMMPS) and MC (gRASPA) simulations to calculate gas uptake within porous materials, considering framework flexibility.
 
 ## Requirement
 1. ML potential trained using DeepMD-kit
