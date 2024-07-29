@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='mofaff',
-    version='0.1.13',
+    version='0.1.21',
     packages=find_packages(),
     description='A package to calculate MOF adsorption with framework flexibility',
     long_description=open('README.md').read(),
