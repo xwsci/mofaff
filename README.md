@@ -22,6 +22,7 @@ pip install . --upgrade
 ## Usage
 
 import mofaff
+
 mofaff.mofaff_main('path_to_input')
 
 
