@@ -77,8 +77,9 @@ def rearrange_H2O(input_filename, output_filename):
             print(f"H   O{two_H[0]}   1.0", *atoms.get_scaled_positions()[two_H[0]], "1.0000", file=file)
             print(f"H   O{two_H[1]}   1.0", *atoms.get_scaled_positions()[two_H[1]], "1.0000", file=file)
             #print(O_idx, two_H)
-            for key in two_H:
-                del d_OH_dict[key]
+#            for key in two_H:
+#                del d_OH_dict[key]
+            H_indices = [idx for idx in H_indices if idx not in two_H]
 
 # define a function to set bond angle
 def set_bond_angle_pbc(atom_A, atom_B, atom_C, desired_angle, cell_parameters):
