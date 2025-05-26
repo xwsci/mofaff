@@ -1,5 +1,5 @@
-import mofaff_main
+from mofaff.mofaff_main import main
 
-mofaff_main.main('input')
+main('input')
 
 

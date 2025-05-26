@@ -8,7 +8,7 @@ NumberOfProductionCycles     500000
 UseMaxStep  yes
 MaxStepPerCycle 1
 
-RestartFile no
+RestartFile yes
 RandomSeed  0
 
 NumberOfTrialPositions 10
@@ -25,13 +25,15 @@ UnitCells 0 1 1 1
 
 ChargeMethod Ewald
 Temperature 300
-Pressure [auto_set]
+Pressure 503.488999
 
 OverlapCriteria 1e5
 CutOffVDW 9.7
-CutOffCoulomb 12.0
+CutOffCoulomb 9.7
 EwaldPrecision 1e-6
 UseChargesFromCIFFile yes
+
+SaveOutputToFile yes
 
 Component 0 MoleculeName             TIP4P
             IdealGasRosenbluthWeight  1.0

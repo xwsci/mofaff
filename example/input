@@ -1,14 +1,14 @@
 # Input parameters for mofaff
-pressure = 3771.2  # Pa
-N_cycle = 10000 # Max number of LAMMPS-gRASPA cycle
-MLP_path = /projects/p31504/dp/dp/NBOF5/DP/DP-str1-H2O-model2/01.train/graph-compress.pb
+pressure = 503.488999
+N_cycle = 100 # Max number of LAMMPS-gRASPA cycle
+MLP_path = /projects/b1013/xijun/NBO5/NBOF5/DP/str1-more-data/01.train-cpu/graph-compress.pb
 N_mof_O = 32 # How many O in mof, will be used to calculate the number of H2O molecules. Note: In your structure, put all the H_H2O and O_H2O after H_mof and O_mof, respectively.
 remove_H2O = False # Remove H2O from MOF after MD? True or False
 adjust_H2O = TIP4P # Adjust H2O to TIP4P after MD? TIP4P or None
 hybrid_FF = False # Use MLP only (False), or hybrid FF (True)
 
 start_cycle = 1 # Change only if this is a restart
-charge_path = /projects/b1013/xijun/NBO5/workflow-LAMMPS-gRASPA/p80-npt/pacmof/charge.txt # For fixed charge settings
+charge_path = /projects/b1013/xijun/NBO5/rerun_SR_5_9/charge_222.txt # For fixed charge settings
 
 # Define the mapping from atom type to element
 type_to_element = {
@@ -24,7 +24,7 @@ type_to_element = {
 # Define the environments of LAMMPS and gRASPA
 commands_LAMMPS = """
 module load deepmd-kit/2.1.1
-lmp -i in.lammps
+singularity exec --nv -B /projects:/projects -B /software:/software -B /home:/home -B $(pwd):$(pwd) /hpc/software/deepmd-kit/2.1.1/deepmd-kit.sif lmp -i in.lammps
 """
 
 commands_gRASPA = """
@@ -32,6 +32,6 @@ module purge
 module use /hpc/software/spack_v17d2/spack/share/spack/modules/linux-rhel7-x86_64/
 module load cuda/11.2.2-gcc
 module load nvhpc/21.9-gcc
-/projects/b1013/xijun/gRASPA-v2/gRASPA-main/src_clean/nvc_main.x > result
+/projects/b1013/xijun/gRASPA-new/src_clean/nvc_main.x > result
 """
 
