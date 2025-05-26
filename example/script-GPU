@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH -A p31504
+#SBATCH -p gengpu
+#SBATCH --gres=gpu:a100:1
+#SBATCH --constraint=pcie
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -t 48:00:00
+#SBATCH --mem=32G
+
+##SBATCH --partition=long
+##SBATCH --job-name=filename
+##SBATCH --time=168:00:00
+#SBATCH --error=e.%J
+#SBATCH --output=o.%J
+##SBATCH --mail-user=<??@northwestern.edu>
+
+#module purge
+#module use /hpc/software/spack_v17d2/spack/share/spack/modules/linux-rhel7-x86_64/
+#module load cuda/11.2.2-gcc
+#module load nvhpc/21.9-gcc
+
+#conda activate myenv
+python3 run.py
+
+

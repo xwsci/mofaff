@@ -1,0 +1,2 @@
+[console_scripts]
+mofaff = mofaff.mofaff_main:main

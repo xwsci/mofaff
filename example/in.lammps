@@ -1,0 +1,33 @@
+# gas phase methane
+
+units           metal
+boundary        p p p
+atom_style      atomic
+
+neighbor        1.0 bin
+neigh_modify    every 10 delay 0 check no
+
+read_data	conf.lmp
+mass 		1 12.011 # C
+mass		2 18.998 # F
+mass            3 1.000 # H
+mass            4 14.001 # N
+mass            5 92.910 # Nb
+mass            6 58.690 # Ni
+mass            7 16.000 # O
+
+pair_style	deepmd graph-compress.pb
+pair_coeff	* *
+
+velocity        all create 50.0 23456789
+fix             1 all nvt temp 300.0 300.0 0.04 # if npt, add: iso 0.037712 0.037712 1.0
+timestep        0.001
+
+thermo_style    custom step pe ke etotal temp press vol
+thermo          1
+dump		1 all custom 100 out.dump id type x y z 
+
+compute myRDF all rdf 100
+#fix saverdf all ave/time 100 100 10000 C_rdf[1] c_rdf[2] file data.rdf mode vector
+
+run             1000

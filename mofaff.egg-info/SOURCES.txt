@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+mofaff/__init__.py
+mofaff/module_add_elements_outdump.py
+mofaff/module_adjust_h2o.py
+mofaff/module_attach_charge_to_cif.py
+mofaff/module_cif_restartfile.py
+mofaff/module_str_lmp_cif.py
+mofaff/module_str_raspa_lmp.py
+mofaff/mofaff_main.py
+mofaff.egg-info/PKG-INFO
+mofaff.egg-info/SOURCES.txt
+mofaff.egg-info/dependency_links.txt
+mofaff.egg-info/entry_points.txt
+mofaff.egg-info/requires.txt
+mofaff.egg-info/top_level.txt

@@ -1,0 +1,18 @@
+#number of pseudo atoms
+15
+#type     print    as    che   oxi     mass    charge   pol
+C          yes     C     C     0     12.011    0        0
+O          yes     O     O     0     15.999    0        0
+H          yes     H     H     0     1.008     0        0
+F          yes     F     F     0     18.998    0        0
+Zr         yes     Zr    Zr     0    65.000    0.0      0.0
+Ow         yes     O     Ow     0     16       0        0
+Hw         yes     H     Hw     0     1        0.52     0
+Lw         yes     L     Lw     0     0       -1.04     0
+C_co2      yes     C     C     0    12.0       0.700    0.0
+O_co2      yes     O     O     0    15.9994   -0.350    0.0
+N_n2       yes     N     N     0    14.00674  -0.482    0.0  
+N_com      no      N     -     0     0.0       0.964    0.0  
+Nb       yes     Nb     Nb     0     92.906    0        0.0
+Ni       yes     Ni     Ni     0    58.693     0        0.0
+N        yes     N      N      0    14.007     0        0.0
